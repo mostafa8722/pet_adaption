@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:pet_adaption/models/cat.dart';
 import 'package:pet_adaption/utils/constant.dart';
+import 'package:readmore/readmore.dart';
 
 class DetailScreen extends StatelessWidget{
   Cat cat;
@@ -225,7 +226,16 @@ class DetailScreen extends StatelessWidget{
                       ],
                     ),
                     SizedBox(height: 5,),
-                    ReadMoreText(),
+                    ReadMoreText(
+                      cat.description,
+                      textAlign: TextAlign.justify,
+                      trimCollapsedText: 'See More',
+                      colorClickableText: orange,
+                      trimLength: 100,
+                      trimMode: TrimMode.Length,
+                      style:
+                      poppins.copyWith(color: black.withOpacity(0.6)),
+                    ) ,
                     SizedBox(height: 5,),
                     GestureDetector(
                       onTap: (){},
@@ -234,10 +244,17 @@ class DetailScreen extends StatelessWidget{
                         height: 45,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Colors.blue.withOpacity(0.8)
+                          color: Colors.blue.withOpacity(0.8),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 3),
+                                color: blue,
+                                spreadRadius: 0,
+                                blurRadius: 10)
+                          ]
                         ),
                         child: Center(
-                          child: Text("Adapt Me",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+                          child: Text("Adapt Me ",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
                         ),
                       ),
                     )
