@@ -254,7 +254,7 @@ class DetailScreen extends StatelessWidget{
                           ]
                         ),
                         child: Center(
-                          child: Text("Adapt Me ",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+                          child: Text("Adapt Me 2",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
                         ),
                       ),
                     )
